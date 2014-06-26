@@ -86,8 +86,8 @@ function sql_q_adv( $sql, $params=array(), $view_rows=10 ) {
         function action_show_page_numbers() {
             ?>
             <table style="width:100%;"><tbody>
-                <td><?php show_page_numbers( $this->max_page ); ?>
-                <td style="width:185px;">
+                <td  style="border:none;"><?php show_page_numbers( $this->max_page ); ?>
+                <td style="width:185px;border:none;">
                     <form style="padding-top:20px;">
                         資料顯示筆數：
                         <input type="text" name="view_rows" value="<?php echo $this->view_rows; ?>" style="width:40px; text-align:center; margin:0;display:inline-block;" />
