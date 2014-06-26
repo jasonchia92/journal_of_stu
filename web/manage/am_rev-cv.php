@@ -5,10 +5,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>審稿召集人::帳號管理系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+    <link href="general.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/page_number_creater/style/normal.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">window.jQuery || document.write('<script src="../js/js_spare/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
     <style type="text/css">
         .personal_data .small-col,
         .personal_data .big-col {
@@ -22,6 +41,11 @@
 
         .personal_data .big-col {
             width: 420px;
+        }
+
+        .personal_data{
+            text-align: left;
+            padding: 10px;
         }
 
         td.manage_func {
@@ -48,13 +72,30 @@
             margin: 0;
             background-color: #DDEEFF;
         }
+
+        #data{
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        input{
+            display: inline;
+        }
+
+        td, th {
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        color: #000;
+        }
+
+        th {
+          background: lightblue;
+          border-color: white;
+        }
     </style>
 </head>
-<!--jQuery 1.7.1-->
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript">window.jQuery || document.write('<script src="../js/js_spare/jquery.min.js"><\/script>')</script>
-<!--jQuery UI-->
-<script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+
 <script type="text/javascript">
     $('document').ready(function(){
         $('button.edit_data').click(function(e) {
@@ -107,30 +148,13 @@
         });
     });
 </script>
-<body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <?php include ("../bar/menu_top.php");?>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span2">
-                    <div class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <?php include ("menu_left.php");?>
-                        </ul>
-                    </div><!--/.well -->
-                </div><!--/span-->
+<body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
                 <div class="span10">
-                    <div class="hero-unit">
-                        <div>
+                    <div class="hero-unit" style="padding-top:50px;">
+                        <div style="width:90%;margin:0 auto;">
                             <h2 class="page-name">審稿召集人</h2>
                             <button class="btn add_user">新增審稿召集人</button>
                         </div>
@@ -158,7 +182,7 @@
                                                     <span class="big-col">地址：<?php echo dop( check_empty( $value['address'] ) ); ?></span>
                                                 </td>
                                                 <td class="manage_func">
-                                                    <button class="btn edit_data" value="<?php echo $value['id']; ?>">修改</button><br/>
+                                                    <button class="btn edit_data" value="<?php echo $value['id']; ?>">修改</button>
                                                     <button class="btn delete_data" value="<?php echo $value['id']; ?>">刪除</button>
                                                 </td>
                                             </tr>
@@ -175,7 +199,8 @@
                 </div><!-- .span10 -->
                 <div align='center'><?php include ("../bar/end.php"); ?></div>
             </div><!-- .row-fluid -->
-        </div><!-- .container-fluid -->
     </div><!-- .container -->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
 </body>
 </html>

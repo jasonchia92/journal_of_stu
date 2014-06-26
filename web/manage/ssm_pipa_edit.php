@@ -18,9 +18,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>編輯個人資料保護法::系統設定管理 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+    <link href="../bar/tab_page.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
+
+    <script type="text/javascript" src="<?=JS_URL;?>/jquery.validate.js"></script>
+    <script type="text/javascript" src="<?=JS_URL;?>/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?=JS_URL;?>/ckfinder/ckfinder.js"></script>
     <style type="text/css">
       body {
         padding-top: 15px;
@@ -58,39 +79,17 @@
 
     </style>
 </head>
-    <script type="text/javascript" src="<?=JS_URL;?>/js_spare/jquery.min.js"></script>
-    <script type="text/javascript" src="<?=JS_URL;?>/js_spare/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="<?=JS_URL;?>/jquery.validate.js"></script>
-    <script type="text/javascript" src="<?=JS_URL;?>/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="<?=JS_URL;?>/ckfinder/ckfinder.js"></script>
     <script type="text/javascript">
         $.ready(function(){
             $('form').validate();
         });
     </script>
-  <body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <?php include ("../bar/menu_top.php");?>  
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <?php include ("menu_left.php");?>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+  <body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
         <div class="span9">
-            <div class="hero-unit">
+             <div class="hero-unit" style="padding-top:70px;text-align:center;">
                 <div class="err_msg"><?php
                     if ( isset($_GET['save_result']) ) {
                         switch ($_GET['save_result']) {
@@ -115,7 +114,7 @@
                         $editor_content = $result['option_value'];
                     }
                 ?>
-                <form method="post" action="">
+                <form method="post" action="" style="width:90%;margin:0 auto;">
                     <textarea id="editor1" name="editor_content" class="ckeditor" style="width:400px; height:200px; resize:none;" required >
                         <?php echo str_replace('\"', '"', $editor_content); ?>
                     </textarea>
@@ -127,10 +126,13 @@
                 </form>
             </div> <!-- end hero-unit -->
         </div> <!-- end span9 -->
+        </div>
         <div align='center'>
         <?php include ("../bar/end.php");?>
         </div>
     </div><!--/.fluid-container-->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
     </body>
     <?php func_queue_handler_start(); ?>
     <?php mail_queue_handler_start(); ?>

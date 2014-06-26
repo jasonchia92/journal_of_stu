@@ -5,14 +5,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>最新消息::系統設定管理 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
+    <link href="../../plugin/page_number_creater/style/normal.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
     <style type="text/css">
-      body {
-        padding-top: 15px;
-        padding-bottom: 40px;
-      }
+     
       .sidebar-nav {
         padding: 9px 0;
       }
@@ -35,6 +50,7 @@
         .create_notice {
             position: relative;
             float: right;
+            margin-top: -5px;
         }
 
         .table {
@@ -48,6 +64,7 @@
           line-height: 20px;
           text-align: left;
           vertical-align: top;
+          text-align: center;
           border-top: 1px solid #dddddd;
         }
 
@@ -56,15 +73,6 @@
           background-color: #f9f9f9;
         }
 
-        span {
-          display : inline-block;
-          overflow : hidden;
-          text-overflow : ellipsis;
-          white-space : nowrap;
-          width : 450px;
-        }
-
-
         .hero-unit{
             padding-left:30px;
             padding-right: 30px;
@@ -72,10 +80,7 @@
 
     </style>
 </head>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="../js/js_spare/jquery.min.js"></script>
-    <!--jQuery UI-->
-    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    
     <script type="text/javascript">
         $('document').ready(function(){
             $('.delete_notice').click(function(){
@@ -99,29 +104,13 @@
         });
     </script>
 
-  <body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <?php include ("../bar/menu_top.php");?>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span2">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <?php include ("menu_left.php");?>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+  <body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
+
         <div class="span10">
-            <div class="hero-unit">
+            <div class="hero-unit" style="padding-top:70px;">
                 <div>
                     <span style="font-size:30px; font-weight:bold;">最新消息管理</span>
                     <button class="btn create_notice" onclick=" window.location='add_notice.php'; ">新增公告</button>
@@ -173,9 +162,14 @@
                 </center>
                 <div id="dialog"></div>
             </div>
+            </div>
         <div align='center'>
             <?php include ("../bar/end.php");?>
         </div>
+        </div>
     </div><!--/.fluid-container-->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
+
   </body>
 </html>

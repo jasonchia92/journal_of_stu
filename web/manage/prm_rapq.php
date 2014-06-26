@@ -5,17 +5,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>論文分派狀態::論文分派系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>  
+
     <style type="text/css">
-        body {
-            padding-top: 15px;
-            padding-bottom: 40px;
-        }
+        
         .sidebar-nav {
             padding: 9px 0;
         }
+
+        
 
         @media (max-width: 980px) {
         /* Enable use of floated navbar text */
@@ -44,9 +59,26 @@
             text-align: center;
         }
 
+        #summary a{
+            color: blue;
+        }
+
         #data {
             padding: 20px;
         }
+
+        td, th {
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        color: #000;
+        }
+
+        th {
+          background: lightblue;
+          border-color: white;
+        }
+
 
 
         #data table th, #data table td,{
@@ -54,28 +86,11 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <?php include ("../bar/menu_top.php");?>
-                </div>
-            </div>
-        </div><!-- /.navbar -->
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span2">
-                    <div class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <?php include ("menu_left.php");?>
-                        </ul>
-                    </div><!--/.well -->
-                </div><!--/span-->
-                <div class="span10">
+<body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
+                <div class="span10" style="padding-top:50px;font-size:15px;">
                     <div class="hero-unit">
                        <?php
                         $query = sql_q("SELECT assign_category FROM users WHERE rid!=0", array());
@@ -172,9 +187,9 @@
                 </div>
             </div>
         </div><!-- end container-fluid -->
-    </div>
     <div align='center'>
         <?php include ("../bar/end.php");?>
-    </div>
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
 </body>
 </html>

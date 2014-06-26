@@ -24,14 +24,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>公告::帳號管理系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
+    <link href="../../plugin/page_number_creater/style/normal.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
+
+    <script type="text/javascript" src="../js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="../js/ckfinder/ckfinder.js"></script>
     <style type="text/css">
-      body {
-        padding-top: 15px;
-        padding-bottom: 40px;
-      }
+      
       .sidebar-nav {
         padding: 9px 0;
       }
@@ -84,44 +103,33 @@
 
     span.col-name {
         display: inline-block;
-        width: 90px;
+        padding: 5px;
         vertical-align: top;
         margin: 0;
     }
 
+    input{
+        display: inline;
+    }
+
+    .span9{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 50px;
+        font-size: 20px;
+    }
+
     </style>
 </head>
-    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.validate.js"></script>
-    <script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="../js/ckfinder/ckfinder.js"></script>
     <script type="text/javascript">
         $.ready(function(){
             $('form').validate();
         });
     </script>
-  <body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <?php include ("../bar/menu_top.php");?>  
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <?php include ("menu_left.php");?>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+  <body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
         <div class="span9">
             <div class="hero-unit">
                 <div class="err_msg" style="color:#FF0000;"><?php echo $err_msg; ?></div>
@@ -135,17 +143,20 @@
                     <br/>
                     <div class="span1 offset3">
                         <div style="width:100px; padding-top:15px;">
-                            <input type="submit" name="submit" value="修改" class="button" />
-                            <a href="view_notice.php" class="button back">返回</a>
+                            <input type="submit" name="submit" value="修改" class="btn" />
+                            <a href="ssm_notice.php" class="btn" style="text-align:center;">返回</a>
                         </div>
                     </div>
                 </form>
             </div> <!-- end hero-unit -->
         </div> <!-- end span9 -->
+        </div>
         <div align='center'>
         <?php include ("../bar/end.php");?>
         </div>
     </div><!--/.fluid-container-->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
     </body>
     <?php func_queue_handler_start(); ?>
     <?php mail_queue_handler_start(); ?>

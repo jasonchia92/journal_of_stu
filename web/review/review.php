@@ -16,16 +16,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>瀏覽維護論文資料::論文管理系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
     <link href="../bar/tab_page.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-      body {
-        padding-top: 15px;
-        padding-bottom: 40px;
-      }
+     
       .sidebar-nav {
         padding: 9px 0;
       }
@@ -57,17 +56,9 @@
         margin: 0;
         padding: 5%;
       }
-      .title{
-        color:green;
-        display: inline-block;
-        width: 90px;
-        vertical-align: top;
-        margin-left: 2%;
-      }
 
       span.col-name {
         display: inline-block;
-        width: 80px;
         vertical-align: top;
         margin: 0;
       }
@@ -111,7 +102,6 @@
       display: inline-block;
       width: 520px;
       text-align: left;
-      overflow: hidden;
       word-break: break-all;
       }
       .label-info{ 
@@ -130,10 +120,8 @@
       span.col-name{
         color: black;
         display: inline-block;
-        width: 100px;
         vertical-align: top;
         margin: 0;
-        text-align: center;
       }
       span.paper_title{
         margin-right: 5%;
@@ -148,13 +136,30 @@
         display: inline-block;
         margin-left: 10%;
       }
+
+      input{
+        display:inline;
+      }
+
     </style>
+   
     <script type="text/javascript" src="<?php echo JS_URL; ?>/js_spare/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo JS_URL; ?>/js_spare/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL; ?>/jquery.validate.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL; ?>/cmxforms.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL; ?>/tab_page.js"></script>
     <script type="text/javascript" src="<?php echo JS_URL; ?>/multiple-file-upload/jquery.MultiFile.js"></script>
+    <script type="text/javascript" src="<?php echo JS_URL; ?>/js_spare/jquery-ui.min.js"></script>
+    
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $(".cr").click(function(){
@@ -204,27 +209,10 @@
       });
     </script>
 </head>
-<body>
-  <div class="container">
-      <div align='center'>
-          <?php include ("../bar/header.php");?>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <?php include ("../bar/menu_top.php");?>
-          </div>
-        </div>
-      </div><!-- /.navbar -->
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3">
-        <div class="well sidebar-nav">
-          <ul class="nav nav-list">
-            <?php require_once ("../bar/menu_review.php");?>
-          </ul>
-        </div><!--/.well -->
-      </div><!--/span-->
+<body class="home">
+     <div id="container">
+        <div id="wrapper">
+            <?php include ("../bar/header_review.php");?> 
       <div class="span9">
         <div class="hero-unit">
           <form action="review2.php?pid=<?=dop($_GET['pid']);?>" method="post" id="review_form" enctype="multipart/form-data">
@@ -250,12 +238,12 @@
                   <span class="col-name">論文ID：</span><span class="paper_title"><?php echo dop($result['id']); ?></span>
                   <span class="col-name">語言：</span><span class="paper_title"><?php echo dop($result['language']); ?></span>
                   <span class="col-name">類別：</span><span class="paper_title"><?php echo dop($result['category']); ?></span><br/>
-                  <div class="title">中文標題：</div><span class="paper_con"><?php echo dop($result['ch_title']); ?></span><br/>
-                  <div class="title">英文標題：</div><span class="paper_con"><?php echo dop($result['en_title']); ?></span><br/>
+                  <div class="title">中文標題：<span class="paper_con"><?php echo dop($result['ch_title']); ?></span></div>
+                  <div class="title">英文標題：<span class="paper_con"><?php echo dop($result['en_title']); ?></span></div>
                   <br/>
-                  <span class="col-name">中文摘要</span>
+                  <span class="col-name">中文摘要：</span>
                   <span class="paper_title"><textarea cols="60" rows="10" name="opinion" id="content" class="detail" disabled><?php echo dop($result['ch_summary']); ?></textarea></span><br/><br/>
-                  <span class="col-name">英文摘要</span>
+                  <span class="col-name">英文摘要：</span>
                   <span class="paper_title"><textarea cols="60" rows="10" name="opinion" id="content" class="detail" disabled><?php echo dop($result['en_summary']); ?></textarea></span><br />
                   <?php
 
@@ -300,7 +288,7 @@
                 <span class="label label-info">評閱區</span><br/>
                 針對給作者及編譯的資訊中，您如何評量這篇文章?請勾選<br />
                 <div>
-                  <div style="display:inline-block; width:250px; margin-left:3%;">
+                  <div class="comment_area" style="display:inline-block; width:250px;">
                   <?php
                     $auth_data = get_auth_data();
                     $record_data = get_review_record( $_GET['id'] );
@@ -325,7 +313,7 @@
                     for ( $i=0 ; $i<6 ; $i++ )
                       echo '<input type="checkbox" name="score_option[]" value="'.$i.'" '.$chk_stat[ $record_data['score_option']{$i} ].' />&nbsp;'.$chk_str[$i].'<br/>';
                     # change column
-                    echo '</div><div style="display:inline-block; width:250px;">';
+                    echo '</div><div class="comment_area2" style="display:inline-block; width:250px;">';
                     # bad option
                     for ( $i=6 ; $i<12 ; $i++ )
                       echo '<input type="checkbox" name="score_option[]" value="'.$i.'" '.$chk_stat[ $record_data['score_option']{$i} ].' />&nbsp;'.$chk_str[$i].'<br/>';
@@ -335,8 +323,8 @@
                 <br /><br />
                 <span class="label label-info">評閱意見</span><div class="remind">※檔案上傳和評閱意見至少選擇一項</div><br/>
                 <textarea cols="60" rows="10" name="opinion" id="content" class="detail" required><?php echo dop( $record_data['opinion']); ?></textarea><br />
-                <div class="down_ltiitle"><input type="checkbox" name="bln_uf" class="choose_file" />上傳評閱檔案<br /></div>
-                <input name="new_upload_file" type="file" id="up_lock" disabled /><br />
+                <div class="down_ltiitle"><input type="checkbox" name="bln_uf" class="choose_file" style="display:inline;" />上傳評閱檔案<br /></div>
+                <input name="new_upload_file" type="file" style="display:inline;" id="up_lock" disabled /><br />
                 <div class="up_lock">*檔案上傳和評閱意見至少選擇一項</div><br/>
                 <div class="upload_font"><span class="label label-info">已上傳的檔案</span><br />
                   <?php
@@ -418,5 +406,7 @@
           <?php include ("../bar/end.php");?>
       </div>
   </div><!--/.fluid-container-->
+  <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+  <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
 </body>
 </html>

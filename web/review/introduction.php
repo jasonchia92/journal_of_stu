@@ -5,15 +5,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>審稿流程說明::線上審稿系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
-    <!--slide-->
-    <!-- CSS -->
-    <link rel="stylesheet" href="../bar/flexslider.css" type="text/css" media="screen" />
-    <!-- jQuery -->
-    <script type="text/javascript" src="<?=JS_URL;?>/js_spare/jquery.min.js"></script>
-    <!-- FlexSlider -->
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet">  
+
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
     <script type="text/javascript" src="<?=JS_URL;?>/jquery.flexslider.js"></script>
     <script type="text/javascript">
         $('document').ready(function(){
@@ -27,13 +36,7 @@
             $('.flex-direction-nav').hide();
 
             function button_display_control() {
-                if ( $("a.flex-active").html() == 6 ) {
-                    $('.rbtn').hide();
-                    $('.back-to-first-step').show();
-                } else {
-                    $('.rbtn').show();
-                    $('.back-to-first-step').hide();
-                }
+                
 
                 if ( $("a.flex-active").html() == 1 ) {
                     $('.lbtn').hide();
@@ -72,12 +75,13 @@
         left: 0;
         bottom: 0;
       }
-      body {
-        padding-top: 15px;
-        padding-bottom: 40px;
-      }
+      
       .sidebar-nav {
         padding: 9px 0;
+      }
+
+      .flexslider .slides img{
+        margin: 0 auto;
       }
 
       @media (max-width: 980px) {
@@ -115,35 +119,18 @@
       }
     </style>
 </head>
-  <body>
-    <div class="container">
-      <div align='center'>
-          <?php include ("../bar/header.php");?>
-      </div>
-      <div class="navbar">
-        <div class="navbar-inner">
-          <div class="container">
-            <?php include ("../bar/menu_top.php");?>
-          </div>
-        </div>
-      </div><!-- /.navbar -->
-      <div class="container-fluid">
-        <div class="row-fluid">
-          <div class="span2">
-            <div class="well sidebar-nav">
-              <ul class="nav nav-list">
-                  <?php require_once ("../bar/menu_review.php");?>
-              </ul>
-            </div><!--/.well -->
-          </div><!--/span-->
+  <body class="home">
+     <div id="container">
+        <div id="wrapper">
+            <?php include ("../bar/header_review.php");?> 
           <div class="span10">
             <div class="slider">
               <div class="flexslider">
                 <div style="border-bottom:1px solid #3F5A88; box-shadow:0 0 3px #888888; margin-bottom:12px; padding:4px;">
                   <h2>審稿流程說明</h2>
-                  <button class="btn lbtn" style="float:left; display:none; margin-top:-35px;">上一步</button>
-                  <button class="btn rbtn" style="float:right; margin-top:-35px;">下一步</button>
-                  <button class="btn back-to-first-step" style="float:right; display:none; margin-top:-35px;">回到第一步</button>
+                  <button class="btn lbtn" style="float:left; display:none; margin-top:-29px;">上一步</button>
+                  <button class="btn rbtn" style="float:right; margin-top:-29px;">下一步</button>
+                  <button class="btn back-to-first-step" style="float:right; display:none; margin-top:-29px;">回到第一步</button>
                 </div>
                 <ul class="slides">
                   <li>
@@ -177,5 +164,7 @@
           <?php include ("../bar/end.php");?>
       </div>
     </div><!--/.fluid-container-->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
   </body>
 </html>

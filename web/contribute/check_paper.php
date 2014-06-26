@@ -23,7 +23,6 @@
 
       <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
       <script src="../bootstrap/theme/js/least.min.js"></script>
-
       <style type="text/css">
         .navbar .nav{
           width: 700px;

@@ -6,15 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>可出刊的論文::論文審查管理系統 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link href="general.css" rel="stylesheet" type="text/css" />
+    <link href="../../plugin/page_number_creater/style/normal.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>  
     <style type="text/css">
-        body {
-            padding-top: 15px;
-            padding-bottom: 40px;
-        }
+        
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -98,10 +114,24 @@
             text-overflow : ellipsis;
             white-space : nowrap;
         }
+
+        input{
+            display: inline;
+        }
+
+        td, th {
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        color: #000;
+        }
+
+        th {
+          background: lightblue;
+          border-color: white;
+        }
     </style>
 </head>
-<script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
-<script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
 <script type="text/javascript">
     $('document').ready(function(){
         $('.view_paper_data').click(function(e) {
@@ -120,28 +150,11 @@
         });
     });
 </script>
-<body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container">
-                    <?php include ("../bar/menu_top.php");?>
-                </div>
-            </div>
-        </div><!-- /.navbar -->
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span2">
-                    <div class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <?php include ("menu_left.php");?>
-                        </ul>
-                    </div><!--/.well -->
-                </div><!--/span-->
-                <div class="span10">
+<body class="home">
+        <div id="container">
+            <div id="wrapper">
+            <?php include ("header_manage.php");?> 
+            <div class="span10">
                     <div class="hero-unit">
                         <div id="category_select">
                             請選擇您要查詢的類別<a href="<?php echo basename(__FILE__); ?>" style="margin-left:50px; color:blue;">顯示全部</a>
@@ -151,8 +164,8 @@
                                 <input type="checkbox" name="category[]" value="3" />&nbsp;設計&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="checkbox" name="category[]" value="4" />&nbsp;幼保.性學.外文&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="checkbox" name="category[]" value="5" />&nbsp;通識教育&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="submit" class="btn" />查詢</button>
-                                <button type="reset" class="btn" />重設</button>
+                                <button type="submit" class="btn" style="display:inline;width:100px;" />查詢</button>
+                                <button type="reset" class="btn" style="display:inline;width:100px;" />重設</button>
                             </form>
                         </div>
                         <div id="data">
@@ -212,7 +225,7 @@
                                     }
                                     echo "</tbody></table>";
                                 } else {
-                                    echo "查無資料";
+                                    echo "<div style='font-size:20px;text-align:center;'>查無資料</div>";
                                 }
                             ?>
                         </div>
@@ -226,5 +239,7 @@
             </div>
         </div><!-- end container-fluid -->
     </div>
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
 </body>
 </html>

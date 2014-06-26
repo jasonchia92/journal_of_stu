@@ -31,15 +31,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>意見回應管理::系統設定管理 - 樹德科技大學學報</title>
     <!-- Le styles -->
-    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="../bar/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/headerWithSlider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../bootstrap/theme/css/lightbox.html" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../bootstrap/theme/css/font-awesome.min.css" media="screen" />
+    <link href="../bootstrap/theme/css/least.min.css" rel="stylesheet">
+    <link href="../bootstrap/theme/css/jquery.easy-pie-chart.css" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="../js/js_spare/jquery-ui.css" media="all" />
+
+    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jQuery.appear.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/superfish.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/easypiechart.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/canvas.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/niceScroll.js"></script>
+
+    <script src="../bootstrap/theme/js/jquery.lazyload.js"></script>
+    <script src="../bootstrap/theme/js/least.min.js"></script>
     <style type="text/css">
-        body {
-            padding-top: 15px;
-            padding-bottom: 40px;
-        }
-        
+                
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -61,7 +74,6 @@
 
         .col-name {
             display: inline-block;
-            width: 100px;
             vertical-align: top;
             text-align: right;
             margin: 0;
@@ -82,38 +94,47 @@
             padding: 0 3px;
             resize: none;
             width: 500px;
+            margin: 0 auto;
+            margin-top: 5px;
         }
 
         .label {
-            font-size: 16px;
+            font-size: 25px;
             line-height: 20px;
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .hero-unit{
+            padding-top: 70px;
+            font-size: 15px;
+            text-align: center;
+        }
+
+        input{
+            display: inline;
+        }
+
+        td, th {
+        padding: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        color: #000;
+        }
+
+        th {
+          background: lightblue;
+          border-color: white;
         }
 
     </style>
-    <script type="text/javascript" src="../js/js_spare/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/js_spare/jquery-ui.min.js"></script>
 </head>
-<body>
-    <div class="container">
-        <div align='center'>
-            <?php include ("../bar/header.php");?>
-        </div>
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <?php include ("../bar/menu_top.php");?>  
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <?php include ("menu_left.php");?>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+<body class="home">
+    <div id="container">
+        <div id="wrapper">
+        <?php include ("header_manage.php");?> 
         <div class="span9">
             <div class="hero-unit">
                 <div class="err_msg" style="color:#FF0000;"><?php echo $err_msg; ?></div>
@@ -123,31 +144,31 @@
                         $result = get_single_opinion_data($_GET['opinion_id']);
                         $identity_array = array('作者', '評閱者', '編輯委員', '其他');
                     ?>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">編號：</div>
                         <div class="col"><?=$result['opinion_id'];?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">主旨：</div>
                         <div class="col"><?=dop($result['keynote']);?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">姓名：</div>
                         <div class="col"><?=dop($result['name']);?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">身分別：</div>
                         <div class="col"><?=$identity_array[ $result['identity'] ];?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">E-mail：</div>
                         <div class="col"><?=$result['email'];?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">回覆狀態：</div>
                         <div class="col"><?=( $result['replied'] ? '已回覆' : '尚未回覆' );?></div>
                     </div>
-                    <div>
+                    <div style="padding:5px;">
                         <div class="col-name">訊息內容：</div>
                         <div class="opinion-content"><?=dop($result['content']);?></div>
                     </div>
@@ -170,10 +191,13 @@
                 </div>
             </div> <!-- end hero-unit -->
         </div> <!-- end span9 -->
+        </div>
         <div align='center'>
         <?php include ("../bar/end.php");?>
         </div>
     </div><!--/.fluid-container-->
+    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
+    <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
     </body>
 </html>
  
