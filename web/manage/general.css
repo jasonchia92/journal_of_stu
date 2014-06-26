@@ -1,0 +1,59 @@
+@import url("reset.css"); 
+
+div#left {
+	background-color: #CCC;
+	padding: 10px;
+}
+
+div#left > div > ul {
+	display: block;
+	margin-bottom: 5px;
+	padding: 5px;
+	background-color: #099;
+}
+
+li.primary_menu {
+	padding: 0px;
+	color: #FFF;
+}
+
+li.primary_menu:hover {
+	cursor: pointer;
+}
+
+li.child_menu {
+	display: none;
+}
+
+li.child_menu > a {
+	display: inline-block;
+	width: 160px;
+	text-align: left;
+	margin-top: 2px;
+	padding-left: 5px;
+	background-color: #055;
+	font-size: 13px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+table th, table td {
+	/* border: 1px solid #555; */
+	padding: 0px 10px;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.pfcr th, .pfcr td {
+	padding: 0px;
+	border: 1px solid #555;
+}
+
+.file_link {
+	cursor: pointer;
+	color: #31E;
+}
+
+.file_link:hover {
+	color: #39D;
+}

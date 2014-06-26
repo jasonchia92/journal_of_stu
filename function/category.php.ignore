@@ -1,0 +1,130 @@
+<?php
+/* system
+check_id_repeat( $id );
+	確認id值重複
+傳入參數：
+	id：類別代號，int
+傳出參數：
+	true：有重複
+	false：無重複
+*/
+function check_id_repeat( $id ){
+	if( count( sql_q("SELECT id FROM paper_category WHERE id=?", array($id)) ) == 0 )
+		return false;
+	else
+		return true;
+}
+
+
+/*
+category_add( $id, $name );
+	新增類別
+傳入參數：
+	$id：類別代號，int (Length:4)
+	$name：類別名稱
+傳出參數：
+	true：新增成功
+	false：新增失敗，id重複
+*/
+function category_add( $id, $name ){
+	$id = str_pad( $id, 4, 0, STR_PAD_LEFT );
+	if( check_id_repeat( $id ) ){
+		return false;
+	}else{
+		return sql_e("INSERT INTO paper_category(id, name) VALUES(?, ?)", array($id, $name));
+	}
+}
+
+
+/*
+get_category_data();
+	取得類別資料
+傳入參數：
+	無
+傳出參數：
+	二維陣列
+*/
+function get_category_data(){
+	return sql_q("SELECT * FROM paper_category", array());
+}
+
+
+/*
+modify_category_data( $id, $name );
+	修改類別資料
+傳入參數：
+	$old_id：原類別代號，int (Length:4)
+	$new_id：新類別代號，int (Length:4)
+	$new_name：新類別名稱
+傳出參數：
+	true：修改成功
+	false：修改失敗，id重複
+*/
+function modify_category_data( $old_id, $new_id, $new_name ){
+	$old_id = str_pad( $old_id, 4, 0, STR_PAD_LEFT );
+	$new_id = str_pad( $new_id, 4, 0, STR_PAD_LEFT );
+	if( check_id_repeat( $new_id ) ){
+		return false;
+	}else{
+		return sql_e("UPDATE paper_category SET id=?, name=? WHERE id=?", array($new_id, $new_name, $old_id));
+		/*
+		sql_e("UPDATE paper_category SET 
+				id='{$new_id}',
+				name='{$new_name}'
+				WHERE id='{$old_id}' ");
+		
+		return true;
+		*/
+	}
+}
+
+
+/*
+delete_category( $id );
+	刪除類別
+傳入參數：
+	$id：類別id，int(Length:4)
+傳出參數：
+	1.true：刪除成功
+	2.false：刪除失敗
+*/
+function delete_category( $id ){
+	return sql_e("DELETE FROM paper_category WHERE id=?", array($id));
+}
+
+
+
+//----------------------------------------------------------------------------------------------------------
+
+
+
+/*
+get_category_page_sum();
+	取得頁數總合
+傳入參數：
+	$slice：頁面顯示資料筆數，int
+傳出參數：
+	頁數，int
+*/
+/*
+function get_category_page_sum( $slice ){
+	$result = sql_q("SHOW TABLE STATUS WHERE NAME='paper_category' ", array());
+	return page_sum_calc( $result[0]['Rows'], $slice );
+}
+*/
+
+
+/*
+get_category_list( $page_num, $slice );
+	取得一頁的資料
+傳入參數：
+	$page_num：頁數，int
+	$slice：資料需求筆數，int
+傳出參數：
+	二維陣列
+*/
+/*
+function get_category_list( $page_num, $slice ){
+	return sql_q("SELECT * FROM paper_category LIMIT ".(($page_num-1)*$slice).", ".$slice, array());
+}
+*/

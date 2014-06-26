@@ -1,0 +1,99 @@
+<?php
+require_once("../db_connect/db_connect_cfg_admin.php");
+require_once("../db_connect/sql.php");
+require_once("global_function.php");
+//require_once("opinion_respond.php");
+require_once("papers_operate.php");
+//require_once("account.php");
+//require_once("paper_review_operate.php");
+
+
+for ($er=1; $er <= 10 ; $er++) {
+sleep(1);	
+/*
+先取得這次使用的ID
+paper_add()自己會去抓這個ID
+不用傳進去
+主要是要給add_author_data();寫入論文id對應資料用的
+作者資料與新增論文的動作完成後會沿用這個id做查詢
+*/
+$paper_id = get_max_paper_id();
+
+echo "本次新增論文所使用的ID為 ".$paper_id."<br/>";
+
+//$get_paper_data = get_paper_inf( $paper_id );
+
+
+//新增主要作者的資料
+$pa_id = add_author_data(
+	$paper_id,
+	$_GET['pa_ch_name'] = "高震宇",
+	$_GET['pa_en_name'] = "Calos Kao",
+	$_GET['pa_ch_serve_unit'] = "樹德科大電算中心",
+	$_GET['pa_en_serve_unit'] = "STU ECC",
+	$_GET['pa_ch_titles'] = "實習生",
+	$_GET['pa_en_titles'] = "Intern",
+	$_GET['pa_email'] = "testpa_{$er}_1@gmail.com",
+	$_GET['pa_phone'] = "0975652093"
+);
+
+
+//新增其他作者的資料(多個資料包成陣列)
+$_GET['ea_ch_name'] = array("高震宇", "高震宇 2");
+$_GET['ea_en_name'] = array("Calos Kao", "Calos Kao 2");
+$_GET['ea_ch_serve_unit'] = array("樹德科大電算中心", "樹德科大電算中心");
+$_GET['ea_en_serve_unit'] = array("STU ECC", "STU ECC");
+$_GET['ea_ch_titles'] = array("實習生", "實習生");
+$_GET['ea_en_titles'] = array("Intern", "Intern");
+$_GET['ea_email'] = array("testpa_{$er}_2@gmail.com", "testpa_{$er}_3@gmail.com");
+$_GET['ea_phone'] = array("0975652093", "0975652093");
+
+//跑迴圈新增其他作者資料，並收集其他作者的id
+$ea_id = array();
+for( $i=0 ; $i<count($_GET['ea_ch_name']) ; $i++ ){
+	//新增作者
+	$bln = add_author_data(
+		$paper_id,
+		$_GET['ea_ch_name'][$i],
+		$_GET['ea_en_name'][$i],
+		$_GET['ea_ch_serve_unit'][$i],
+		$_GET['ea_en_serve_unit'][$i],
+		$_GET['ea_ch_titles'][$i],
+		$_GET['ea_en_titles'][$i],
+		$_GET['ea_email'][$i],
+		$_GET['ea_phone'][$i]
+	);
+
+	//成功時把id寫進陣列裡
+	if( $bln != false )
+		$ea_id[$i] = $bln;
+	else
+		echo "fail! ";
+
+	sleep(0.5);
+}
+
+//把id陣列轉成SQL查詢用字串
+$ea_id = acts( $ea_id, 0 );
+
+//寫入
+paper_add( 2, "新增作者測試", "test add author", $pa_id, $ea_id, "無", "none", "test", "", "", $er, 22 );
+
+}
+
+
+exit;
+sleep(2);
+//這裡開始取得剛剛新增的作者資料
+
+//取得該論文的資料
+$get_paper_data = get_paper_inf($paper_id);
+
+//取得主要作者資料
+echo "<br/>主要作者資料<br/>";
+print_r( get_author_data($get_paper_data['primary_author'] ) );
+
+//取得其他作者資料
+echo "<br/>其他作者資料<br/>";
+print_r( get_author_data($get_paper_data['else_authors'] ) );
+
