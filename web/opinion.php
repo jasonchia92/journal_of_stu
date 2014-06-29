@@ -27,7 +27,16 @@
     <script type="text/javascript">
         document.documentElement.className = 'js';
     </script>
-    
+    <style type="text/css">
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            #fr_contact_form{
+                padding-top: 80px;
+            }
+
+          }
+
+    </style>    
 
 </head>
 <body class="home">

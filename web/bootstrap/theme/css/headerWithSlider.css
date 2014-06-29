@@ -87,7 +87,7 @@ video{
 	
 	#main_header { height: 900px !important; }
 	#main_header .flexslider .slides > li{
-		height: 900px !important;
+		height: 600px !important;
 	}
 	
 	#left-arrow, #right-arrow{
@@ -107,7 +107,7 @@ video{
 
 	#main_header { height: 900px !important; }
 	#main_header .flexslider .slides > li{
-		height: 900px !important;
+		height: 600px !important;
 	}
 	
 	#left-arrow{ top: 80%; }
@@ -132,7 +132,7 @@ video{
 	
 	#main_header { height: 640px !important; }
 	#main_header .flexslider .slides > li{
-		height: 640px !important;
+		height: 600px !important;
 	}
 	
 	#left-arrow{ top: 60%; }

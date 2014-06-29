@@ -41,8 +41,25 @@
        }
 
        .publish_history{
-        padding-top: 200px;
-       }
+            padding-top: 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .publish_history {
+                padding: 0;
+            }
+            .bio{
+                background-color: #34495e;
+                height: 200px;
+            }
+            #services{
+                padding: 100px 0;
+            }
+
+            }
+          }
+
 
        .notice-block:hover {
         color: #1bbc9b; 

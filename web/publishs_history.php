@@ -22,6 +22,16 @@
     <script type="text/javascript" src="bootstrap/theme/js/niceScroll.js"></script>
     
     <script src="bootstrap/theme/js/jquery.lazyload.js"></script>
+    <style type="text/css">
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            #recent-work{
+                padding-top: 50px;
+            }
+
+          }
+
+    </style>
 </head>
 <body class="home">
     <div id="container">

@@ -347,6 +347,8 @@ ul#mobile_menu a {
 	padding-left: 5px;
 	padding-right: 5px;
 	width: auto;
+	color: #fff;
+	font-size: 15px;
 }
 #menu .nav > li.current_page_item > a:hover {
 	background:#fff;
@@ -1361,7 +1363,6 @@ h4.widget_title:after {
 .publish_history{ 
 	float: right;
 	padding-right: 50px;
-	padding-top:250px;
 	font-size:15px;
 	/*index 的監視所有期刊 */
 }
@@ -1855,6 +1856,22 @@ textarea.input {
 	text-shadow: none;
 }
 
+@media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .publish_history {
+                padding: 0;
+            }
+            .bio{
+                background-color: #34495e;
+                height: 200px;
+            }
+            #services{
+                padding: 100px 0;
+            }
+
+ }
+
+
 @media only screen and ( min-width: 768px ) and ( max-width: 980px ) {
 	
 	.home #main_header { height: 600px !important; }
@@ -1877,7 +1894,10 @@ textarea.input {
 	.service p{ font-size: 14px; }
 	
 	.bio{ width: 40%; }
-	
+		
+
+
+
 	.team_person{
 		width: 140px;
 		margin-right: 70px;

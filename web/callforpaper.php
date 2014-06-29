@@ -29,6 +29,28 @@
            background-color: #ccad3b;
        }
 
+       @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .publish_history {
+                padding: 0;
+            }
+            .bio{
+                background-color: #ccad3b;
+                height: auto;
+                padding: 10px;
+            }
+
+            .rightSideBorder{
+                
+                height: auto;
+            }
+            #services{
+                padding: 100px 0;
+            }
+
+            }
+          }
+
     }
     </style>
 

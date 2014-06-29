@@ -207,7 +207,7 @@
 		// HEADER PARALLAX SCROLL	
 		function parallaxScroll(){
 			var scrolled = $(window).scrollTop();
-			$("#main_header").css({backgroundPosition: "0 "+(95+(scrolled*.4))+"%" });
+			$("#main_header").css({backgroundPosition: "0 "+(95+(scrolled*.2))+"%" });
 			$(".fr_slide_image").css({backgroundPosition: "0 "+(95+(scrolled*.4))+"%" });
 		}
 		$(window).bind('scroll',function(e){

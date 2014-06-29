@@ -113,6 +113,10 @@
   .slider{
     text-align: center;
   }
+
+  .btn{
+    width: 150px;
+  }
 </style>
 </head>
   <body class="home">

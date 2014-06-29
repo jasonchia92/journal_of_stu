@@ -57,6 +57,16 @@
         display: table-cell;
         float: none;
       }
+
+      #header_featured ol.flex-control-nav {
+        bottom: 0;
+      }
+      #main_header .flexslider .slides > li {
+        height: 555px !important;  
+      }
+      .span10{
+        padding-top: 20px;
+      }
     </style>
 </head>
 
