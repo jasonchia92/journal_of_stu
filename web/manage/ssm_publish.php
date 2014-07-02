@@ -317,7 +317,7 @@ if ( isset($_POST['data_del']) ) {
                                                                     </a>
                                                                 </td>
                                                                 <td>
-                                                                    <button class="modify btn" value="<?php echo $value['id']; ?>">修改</button>
+                                                                    <button class="modify btn" value="<?php echo $value['id']; ?>" style="font-size:15px;padding:5px;">修改</button>
                                                                 </td>
                                                             </tr>
                                                         <?php
@@ -358,7 +358,7 @@ if ( isset($_POST['data_del']) ) {
                                                 <span class="warm"></span>
                                             </span>
                                         </div>
-                                        <input type="submit" name="submit" value="新增" class="btn" />
+                                        <input type="submit" name="submit" value="新增" class="btn" style="font-size:15px;padding:5px;"/>
                                     </form>
                                 </div><!--tab2-->
                             </div><!--tab_container-->

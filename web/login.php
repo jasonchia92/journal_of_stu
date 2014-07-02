@@ -14,6 +14,14 @@
 <link rel="stylesheet" href="bootstrap/theme/css/style.css" type="text/css" media="screen" />
 
 <script type="text/javascript" src="<?php echo JS_URL; ?>/js_spare/jquery.min.js"></script>
+
+<style type="text/css">
+    #footer{
+        background: #fff;
+        position :  absolute; 
+    }
+
+</style>
 </head>
 
 <body class="home" style="background: url(bootstrap/theme/images/slider/header_1.jpg) no-repeat;background-size: cover; padding:0;">
@@ -48,7 +56,6 @@
 
     </div>
 
-    <div style="background-color:#fff;text-align:center;margin-top:5%;"> 
     <?php include ("bar/end.php");?>           
     </div>
 <!--/.fluid-container-->

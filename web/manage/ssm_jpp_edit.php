@@ -116,8 +116,8 @@
                     </textarea>
                     <br/>
                     <div class="span4 offset4">
-                        <input type="submit" name="submit" value="儲存變更" class="btn" />
-                        <a href="view_notice.php" class="btn back">放棄修改</a>
+                        <input type="submit" name="submit" value="儲存變更" class="btn" style="font-size:15px;padding:5px;" />
+                        <a href="view_notice.php" class="btn back" style="font-size:15px;padding:5px;">放棄修改</a>
                     </div>
                 </form>
             </div> <!-- end hero-unit -->

@@ -156,7 +156,7 @@
         <?php include ("header_manage.php");?> 
         <div class="span10">
             <div class="hero-unit">
-                <div id="category_select">
+                <div id="category_select" style="text-align:center;margin-top:50px;">
                 請選擇您要查詢的類別<a href="<?php echo basename(__FILE__); ?>" style="margin-left:50px; color:blue;">顯示全部</a>
                 <form action="" method="get">
                     <input type="checkbox" name="category[]" value="1" />&nbsp;管理&nbsp;&nbsp;&nbsp;&nbsp;
@@ -164,8 +164,8 @@
                     <input type="checkbox" name="category[]" value="3" />&nbsp;設計&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="checkbox" name="category[]" value="4" />&nbsp;幼保.性學.外文&nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="checkbox" name="category[]" value="5" />&nbsp;通識教育&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button type="submit" class="btn" style="display:inline;width:100px;"/>查詢</button>
-                    <button type="reset" class="btn" style="display:inline;width:100px;"/>重設</button>
+                    <button type="submit" class="btn" style="display:inline;width:100px;font-size:15px;padding:5px;"/>查詢</button>
+                    <button type="reset" class="btn" style="display:inline;width:100px;font-size:15px;padding:5px;"/>重設</button>
                 </form>
             </div>
             <div id="data">

@@ -164,7 +164,6 @@
           <?php include ("../bar/end.php");?>
       </div>
     </div><!--/.fluid-container-->
-    <script type="text/javascript" src="../bootstrap/theme/js/custom.js"></script>
     <script type="text/javascript" src="../bootstrap/theme/js/headerWithSlider.js"></script>
   </body>
 </html>

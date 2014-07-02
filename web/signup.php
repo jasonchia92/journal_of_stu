@@ -38,6 +38,10 @@
            width: 100%;
            margin-left: 0;
        }
+       #footer{
+        background: #fff;
+        position :  absolute; 
+    }
     </style>
 </head>
 

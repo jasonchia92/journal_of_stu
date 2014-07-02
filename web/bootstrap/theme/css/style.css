@@ -1613,6 +1613,8 @@ ol.flex-control-nav a.active, .featured_box ol.flex-control-nav li a.active{
 	padding:25px 0;
 	color: #555;
 	position: relative;
+	width: 100%;
+	bottom: 0;
 	clear: both;
 	text-align: center;
 }

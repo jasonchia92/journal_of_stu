@@ -74,6 +74,7 @@
             cursor:pointer;
         }
 
+
         .button:hover {
             background: #d5dbb6;
         }
@@ -167,8 +168,8 @@
                                 <input type="checkbox" name="category[]" value="3" />&nbsp;設計&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="checkbox" name="category[]" value="4" />&nbsp;幼保.性學.外文&nbsp;&nbsp;&nbsp;&nbsp;
                                 <input type="checkbox" name="category[]" value="5" />&nbsp;通識教育&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="submit" class="btn" style="display:inline;width:100px;" />查詢</button>
-                                <button type="reset" class="btn" style="display:inline;width:100px;"/>重設</button>
+                                <button type="submit" class="btn" style="display:inline;width:100px;font-size:15px;padding:5px;" />查詢</button>
+                                <button type="reset" class="btn" style="display:inline;width:100px;font-size:15px;padding:5px;"/>重設</button>
                             </form>
                         </div>
                         <div id="data">

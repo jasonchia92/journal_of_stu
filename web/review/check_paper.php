@@ -108,6 +108,10 @@
       width: 600px;
       height: 200px;
     }
+
+    input{
+      display: inline;
+    }
   </style>
   <script type="text/javascript" src="<?php echo JS_URL; ?>/js_spare/jquery.min.js"></script>
   <script type="text/javascript" src="<?php echo JS_URL; ?>/jquery.validate.js"></script>

@@ -127,7 +127,7 @@
         <?php include ("header_manage.php");?> 
         <div class="span10">
             <div class="hero-unit">
-                <button class="btn add_user">新增管理員</button>
+                <button class="btn add_user" style="font-size:15px;padding:5px;">新增管理員</button>
             <center>
             <table class="table">
                 <thead>
@@ -153,8 +153,8 @@
                                 <td><?php echo dop($value['name']); ?></td>
                                 <td><?php echo dop($value['email']); ?></td>
                                 <td class="manage_func">
-                                    <button class="btn edit_data" value="<?php echo $value['id']; ?>">修改</button>
-                                    <button class="btn delete_data" value="<?php echo $value['id']; ?>">刪除</button>
+                                    <button class="btn edit_data" value="<?php echo $value['id']; ?>" style="font-size:15px;padding:5px;">修改</button>
+                                    <button class="btn delete_data" value="<?php echo $value['id']; ?>" style="font-size:15px;padding:5px;">刪除</button>
                                 </td>
                             </tr>
                         <?php endforeach;

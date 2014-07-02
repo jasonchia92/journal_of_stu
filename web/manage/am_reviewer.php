@@ -157,7 +157,7 @@
             <div class="hero-unit" style="padding-top:50px;">
                 <div style="width:90%;margin:0 auto;">
                     <h2 class="page-name">審稿委員</h2>
-                    <button class="btn add_user">新增審稿委員</button>
+                    <button class="btn add_user" style="font-size:15px;padding:5px;">新增審稿委員</button>
                 </div>
                 <center>
                     <table class="table" id="data">
@@ -185,8 +185,8 @@
                                                 <span class="big-col">地址：<?php echo dop( check_empty( $value['address'] ) ); ?></span>
                                             </td>
                                             <td class="manage_func">
-                                                <button class="btn edit_data" value="<?php echo $value['id']; ?>">修改</button>
-                                                <button class="btn delete_data" value="<?php echo $value['id']; ?>">刪除</button>
+                                                <button class="btn edit_data" value="<?php echo $value['id']; ?>" style="font-size:15px;padding:5px;">修改</button>
+                                                <button class="btn delete_data" value="<?php echo $value['id']; ?>" style="font-size:15px;padding:5px;">刪除</button>
                                             </td>
                                         </tr>
                                         <?php

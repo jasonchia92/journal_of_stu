@@ -113,7 +113,7 @@
             <div class="hero-unit" style="padding-top:70px;">
                 <div>
                     <span style="font-size:30px; font-weight:bold;">最新消息管理</span>
-                    <button class="btn create_notice" onclick=" window.location='add_notice.php'; ">新增公告</button>
+                    <button class="btn create_notice" onclick=" window.location='add_notice.php'; " style="font-size:15px;padding:5px;">新增公告</button>
                 </div>
                 <center>
                     <?php
@@ -145,8 +145,8 @@
                                             <td><?php echo dop($value['user_name']); ?></td>
                                             <td><?php echo $value['date']; ?></td>
                                             <td>
-                                                <button class="btn" onClick=" window.location.href='edit_notice.php?notice_id=<?php echo $value['notice_id']; ?>' " >修改</button>
-                                                <button class="btn delete_notice" value="<?php echo $value['notice_id']; ?>">刪除</button></td>
+                                                <button class="btn" onClick=" window.location.href='edit_notice.php?notice_id=<?php echo $value['notice_id']; ?>' " style="font-size:15px;padding:5px;">修改</button>
+                                                <button class="btn delete_notice" value="<?php echo $value['notice_id']; ?>" style="font-size:15px;padding:5px;">刪除</button></td>
                                             <tr>
                                         <?php
                                     }

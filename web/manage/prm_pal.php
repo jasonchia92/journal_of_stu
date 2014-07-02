@@ -176,13 +176,13 @@
 				<div style="display:inline-block; margin-left:50px; margin-bottom:5px;">
 					<form action="" method="get">
 						以
-						<select class='btn' name="search_condition" style="display:inline;font-size:15px;height:30px;">
+						<select class='btn' name="search_condition" style="display:inline;font-size:15px;height:30px;padding:0;">
 							<option value="0">論文ID</option>
 							<option value="1">審稿委員ID</option>
 						</select>
 						搜尋：
 						<input type="text" name="search_str" />
-						<button class='btn' type="submit" style="display:inline;width:100px;height:30px;" />送出</button>
+						<button class='btn' type="submit" style="display:inline;width:100px;height:30px;font-size:15px;padding:0;" />送出</button>
 					</form>
 				</div>
 				<div style="display:inline-block; margin-left:50px;"><a style="color:blue;" href="?category=0">顯示所有論文</a></div>

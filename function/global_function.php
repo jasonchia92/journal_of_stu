@@ -231,16 +231,19 @@ function get_sidebarLeft() {
                         $img_path = 'publish/'.urlencode($publish_data['file_cover']);
                     ?>
 
-                        <div class="book">
+                        <div class="book" style="display:table-cell;vertical-align:middle;">
                        
                         <a target="_blank" class="publish-block" href="publish/<?php echo urlencode($publish_data['file_pdf']);?>">
-                            <img src="<?php echo $img_path; ?>" style="float:left;padding:10px;"/>
+                            <img src="<?php echo $img_path; ?>" style="float:left;padding:10px;width:150px;"/>
                         </a>
 
                         <div class="book_title">
                         最新期刊：<br>
                         <?php echo dop($publish_data['title']);?><br>
-                        發行日期：<?php echo $publish_data['publish_date']; ?></div>
+                        發行日期：<?php echo $publish_data['publish_date']; ?>
+                        <br>
+                        <a href="publishs_history.php" style="float:right">檢視歷年期刊→</a>
+                        </div>
                         
                     <?php
 
@@ -248,7 +251,7 @@ function get_sidebarLeft() {
                     <span style="font-size:14px;">未登錄任何期刊資料於系統</span>
                 <?php } // end if
             ?>
-        <div class="publish_history"><a href="publishs_history.php">檢視歷年期刊→</a></div>
+        <div class="publish_history"></div>
         </div>
 <?php
 }

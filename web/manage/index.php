@@ -61,12 +61,11 @@
       #header_featured ol.flex-control-nav {
         bottom: 0;
       }
-      #main_header .flexslider .slides > li {
-        height: 555px !important;  
-      }
+
       .span10{
         padding-top: 20px;
       }
+
     </style>
 </head>
 
@@ -74,7 +73,6 @@
     <div id="container">
         <div id="wrapper">
         <?php include ("header_manage.php");?> 
-        
         <div class="span10">
             <div class="hero-unit" style="padding-top:50px;text-align:center;font-size:20px;margin:20px;">
                點選上側選單以進行各項作業。

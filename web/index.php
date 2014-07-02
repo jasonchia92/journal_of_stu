@@ -44,6 +44,15 @@
             padding-top: 0;
         }
 
+        .book{
+            margin: 10px;
+        }
+
+        #footer{
+            position: relative;
+        }
+
+
         @media (max-width: 980px) {
             /* Enable use of floated navbar text */
             .publish_history {
@@ -73,7 +82,7 @@
            <?php include ("bar/header.php");?> 
 
             <div id="services" >
-                <div class="one_half clearfix">
+                <div class="one_half clearfix" style="display:table;">
                     <?php get_sidebarLeft(); ?>
                 </div> <!-- end of .one_half -->
 

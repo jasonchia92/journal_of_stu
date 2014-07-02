@@ -164,7 +164,7 @@ if ( isset($_POST['submit']) ) {
                     <div class="hero-unit">
                         <div><span style="font-size:30px; font-weight:bold;">意見回應管理</span></div>
                         <form name="del_data" action="" method="post">
-                            <input type="submit" class="btn" value="刪除選取項目" />
+                            <input type="submit" class="btn" value="刪除選取項目" style="font-size:15px;padding:5px;" />
                             <span class="func_selectAll">(
                                 <span class="func_sa_control hyper-link">全選</span>/
                                 <span class="func_sa_control hyper-link">全不選</span>
@@ -198,7 +198,7 @@ if ( isset($_POST['submit']) ) {
                             <?php endif; ?>
                             <div class="operation_block">
                                 <div class="data_operation">
-                                    <input type="submit" class="btn" name="submit" value="刪除選取項目" />
+                                    <input type="submit" class="btn" name="submit" value="刪除選取項目" style="font-size:15px;padding:5px;"/>
                                 </div> <!-- end data_operation -->
                             </div> <!-- end operation_block -->
                         </form>
