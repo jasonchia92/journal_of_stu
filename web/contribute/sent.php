@@ -110,6 +110,10 @@
       padding: 10px;
     }
 
+    .btn{
+      display: inline-block;
+    }
+
     div.agree{
       width: 750px;
       height: 400px;
@@ -304,7 +308,7 @@
     }
 
       $("#new_btn").click(function(){
-        $("#author_add").append("<div class=\"else_authors\"><div class=\"adt_col_left\"><button class=\"remove_author_block btn\">移除<\/button><\/div><div class=\"adt_col_right\"><table><tbody><tr><td class=\"table_border_top\" colspan=\"4\"><\/td><\/tr><tr><td>中文姓名<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_name[]\" size=20 required /><\/td><td>英文姓名<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_name[]\" size=20 /><\/td><\/tr><tr><td>職稱(中文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_titles[]\" size=20 /><\/td><td>職稱(英文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_titles[]\" size=20 /><\/td><\/tr><tr><td>服務單位(中文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_serve_unit[]\" size=20 /><\/td><td>服務單位(英文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_serve_unit[]\" size=20 /><\/td><\/tr><tr><td>聯絡電話<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_phone[]\" class=\"required number\" size=20 /><\/td><td>E-mail<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_email[]\" class=\"required email\" size=20 /><\/td><\/tr><\/tbody><\/table><\/div><\/div>");
+        $("#author_add").append("<div class=\"else_authors\"><div class=\"adt_col_left\"><button class=\"remove_author_block btn\">移除<\/button><\/div><div class=\"adt_col_right\"><table style='margin-left:auto;margin-right:auto;'><tbody><tr><td class=\"table_border_top\" colspan=\"4\"><\/td><\/tr><tr><td>中文姓名<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_name[]\" size=20 required /><\/td><td>英文姓名<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_name[]\" size=20 /><\/td><\/tr><tr><td>職稱(中文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_titles[]\" size=20 /><\/td><td>職稱(英文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_titles[]\" size=20 /><\/td><\/tr><tr><td>服務單位(中文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_ch_serve_unit[]\" size=20 /><\/td><td>服務單位(英文)<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_en_serve_unit[]\" size=20 /><\/td><\/tr><tr><td>聯絡電話<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_phone[]\" class=\"required number\" size=20 /><\/td><td>E-mail<\/td><td class=\"align_left\"><input type=\"text\" name=\"new_email[]\" class=\"required email\" size=20 /><\/td><\/tr><\/tbody><\/table><\/div><\/div>");
         $('.remove_author_block').bind("click", function(){
           $(this).parent().parent().remove();
         });
@@ -447,11 +451,12 @@
                         <!--其他作者-->
                       <div><div class="fs">[其他作者]</div>
                         <div id="author_add"></div>
-                        <button type="button" id="new_btn" class='btn' style="margin-top:3%;" />新增一欄</button>
+                       
                       </div>
                       <div>
-                        <button type="button" id="btn2_b" class='btn'>上一步</button>
-                        <button type="button" id="btn2" class='btn'>下一步</button>
+                        <button type="button" id="new_btn" class='btn' style="margin-top:3%;display:inline-block;" />新增一欄</button>
+                        <button type="button" id="btn2_b" class='btn' style="display:inline-block;">上一步</button>
+                        <button type="button" id="btn2" class='btn' style="display:inline-block;">下一步</button>
                       </div>
                     </div>
                       </div><!--n2-->
